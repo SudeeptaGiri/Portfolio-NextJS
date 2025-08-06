@@ -1,9 +1,9 @@
 import { Project } from "@/types/projects";
 export const navItems = [
+  { name: "Home", link: "#home" },
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Contact", link: "#contact" },
-  { name: "Resume", link: "https://drive.google.com/file/d/1KniZMJZ0rsB9OuA-zJwDujfK8LHrLeS8/view?pli=1" }
+  { name: "Contact", link: "#contact" }
 ];
 
 export const gridItems = [

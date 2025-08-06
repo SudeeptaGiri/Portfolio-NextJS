@@ -16,7 +16,7 @@ const RecentProjects = () => {
         My Developer Arc{" - "}
         <span className="text-purple">Projects So Far</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10" id="projects">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10 scroll-mt-20" id="projects">
         {projects.map((item:Project) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] cursor-pointer"
