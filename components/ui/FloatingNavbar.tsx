@@ -42,6 +42,13 @@ export const FloatingNav = ({
       }
     }
   });
+   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+        e.preventDefault();
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
   return (
     <AnimatePresence mode="wait">
@@ -72,18 +79,20 @@ export const FloatingNav = ({
         }}
       >
         {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            {/* add !cursor-pointer */}
-            {/* remove hidden sm:block for the mobile responsive */}
-            <span className=" text-sm !cursor-pointer">{navItem.name}</span>
-          </Link>
+         <button
+          key={idx}
+          onClick={(e) => {
+            handleScroll(e as any, navItem.link);
+            setVisible(false);
+          }}
+          className={cn(
+            "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 text-sm !cursor-pointer"
+          )}
+        >
+  <span className="block sm:hidden">{navItem.icon}</span>
+  <span>{navItem.name}</span>
+</button>
+
         ))}
         {/* remove this login btn */}
         {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">

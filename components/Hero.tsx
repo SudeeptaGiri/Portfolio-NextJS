@@ -6,7 +6,7 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <section id="home" className="scroll-mt-20">
+    <section id="home" className="scroll-mt-20 relative">
     <div className="pb-20 pt-36">
       {/**
        *  UI: Spotlights
